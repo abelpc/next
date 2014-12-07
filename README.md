@@ -43,8 +43,9 @@ at least one Nodes and/or one Monitors. Select as many as you can. Notice that w
 == Quick Setup ==
 
 = Login =
-Username: abelpc_uff@yahoo.com.br
-Password: pass
+
+Username: PlanetLab_USER
+Password: PlanetLab_PASS
 
 = Interface =
 
