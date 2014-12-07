@@ -1,0 +1,128 @@
+Analisys System v1
+
+DESCRICAO
+
+Esse sistema foi criado para gerar uma análise dos pacotes transmitidos em um computador assistindo a streamings de vídeo através do protocolo SopCast.
+
+DEPENDENCIAS
+
+O AnSYSv1 depende exclusivamente dos seguintes pacotes:
+- Python versão 2.7 ou superior (scripts programados em Python);
+- Pacote Tshark (captura dos pacotes);
+- csshX (para sistemas baseados no MacOS);
+- Pcapy (para leiturar dos dumps dos arquivos);
+- Impacket (para decodificagem dos pacotes lidos);
+
+-> Todas as dependencias devem ser instaladas para correta execução do programa;
+-> Todas as dependencias se encontram no diretório 'dependencies';
+
+DIRETORIOS
+
+-> dependencies
+- Contém todas as dependencias do sistema;
+
+-> samples
+- Diretório para onde as amostras extraídas são armazenadas;
+
+-> results
+- Diretório para onde os resultados extraídos das amostras são armazenados;
+
+
+FUNCIONAMENTO
+
+Esse sistema basea o seu funcionamento na rede global de pesquisa PlanetLab. Por ser uma rede bastante volátil, scripts de listagem, adição e remoção de nós foram criados.
+Apesar de utilizarem uma heurística rudimentar, esses scripts conseguem uma acurância suficiente para os testes propostos por esse sistema.
+
+Para que o sistema funciona corretamente, os scripts de funcionamento básico devem ser enviados aos nós do slice contido no PlanetLab. Esses scripts foram programados para
+executarem todas as demais tarefas automaticamente. Algumas dessas tarefas consistem na obtenção de algumas dependências e criação de diretórios base.
+
+Adicionando nós ao slice
+
+Os slices do PlanetLab possuem limitações que apenas o Administrador podem alterar. Atualmente, o PlanetLab suporta a adição de no máximo 100 nós a um slice. Logo, o script
+de adição de nós (add_nodes.py) foi configurado para adicionar, no máximo, 100 nós a um slice. Basta executa-lo para que os nós sejam adicionados. As únicas garantias que o script
+faz é que o nó sendo adicionado está ONline e que ele não pertence a uma lista de nós conhecidamente problemáticos. Além disso, ele não adiciona nenhum nó que pertença ao 
+PlanetLab-Europe, pois esses são conhecidos por demorarem muito a serem funcionais. Ao invés, nós do PlanetLab-Central são sempre adicionados.
+
+Removendo nós problemáticos do slice
+
+Um script para remoção de nós problemáticos foi criado. Esse script irá verificar a resposta a um comendo PING executado diretamente nos hosts pertecentes ao slice. Para
+executar essa ação, basta executar o script 'ping.py'
+
+Alternativamente, você poderá remover nós diretamente do site do PlanetLab, utilizando os seguintes dados para logar-se em www.planet-lab.org:
+
+Username: abelpc_uff@yahoo.com.br
+Senha: dkwpq753
+
+Enviando arquivos básicos de funcionamento
+
+O sistema precisa da sua base enviada aos nós afim de que o seu funcionamento seja correto. Para isso, um script foi criado para o envio dos arquivos base do sistema. Basta
+executá-lo para que os nós do slice estejam aptos para trabalharem com o sistema. Para isso, basta digitar ./core.sh 
+
+Criando um Streaming
+
+Esse sistema é totalmente baseado para a análise de dados oriundos do protocolo de comunicação utilizado pelo Programa de Streaming de Vídeos SopCast. Para o seu devido
+funcionamento, um servidor SoPCast deve ser ativado utilizando os seguintes dados:
+
+Channel Name: UFF
+Channel ID: 173804
+Endereço: sop://broker.sopcast.com:3912
+Nome da conta: uff_sopcast@hotmail.com
+Senha: dkwpq753
+Porta: 3902
+
+-> Um arquivo WMV ou RMVB deve ser configurado no momento da inicialização do servidor.
+
+Logo após a criação do servidor, a coleta das amostras pode ser inicializada para uma transmissão contendo 5, 10, 15, 20, 25 e 50 nós, em dumps com intervalos de 5, 10 e 20 minutos.
+O script que irá inicializar a coleta é chamado get_samples.sh
+
+Caso problemas ocorram no streaming ou em algum nós durante a coleta, é recomendado parar o servidor SopCast e cancelar todos os comandos (CTRL+C). Logo após isso, é recomendado
+executar o script 'killall_process.sh'. Esse script irá conectar a todos os nós do slice e irá finalizar os processos em execução, deixando-os livres para uma nova coleta.
+
+NOVA COLETA
+
+Abaixo, uma ordem para a primeira coleta a partir de um computador rodando o MacOS, em novos nós da rede SopCast:
+
+[1] Adicionar nós ao Slice:
+
+    Essa etapa pode ser realizada manualmente através do site do PlanetLab. Basta executar:
+    $ ./add_nodes.py
+
+    ATENÇÃO: Após adicionar os nós, é recomendado esperar 30 minutos para executar os próximos passos. Além disso, é recomendado verificar se eles estão prontos para os próximos 
+	     passos, seguindo os seguintes passos:
+
+    [1.1] Remover nós problemáticos:
+
+          $ ./ping.py
+
+	  -> Após essa etapa, é recomendado adicionar manualmente os nós através do site do PlanetLab, pois apenas alguns poucos nós terão problemas nessa etapa.
+
+(2) Enviar arquivos base aos nós:
+
+    $ ./core.sh
+
+(3) Inicializar Servidor SopCast
+
+    Utilizando os dados da rede SopCast fornecidos acima, deve-se inicializar um Servidor SopCast (Fazer download do cliente Windows em www.sopcast.com).
+
+(4) Iniciar Coleta
+
+    Após a correta inicialização do servidor SopCast, a coleta pode ser inicializada através da execução do seguinte comando:
+
+    $ ./get_samples.sh
+
+    ATENÇÃO: Como ocorrem muitos bugs com o Servidor SopCast após a finalização na reprodução de um arquivo de vídeo, é recomendado reinicializar o servidor SopCast após cada
+             coleta. Uma coleta consiste no teste com um número determinado de nós conectados à rede SopCast por vários intervalos de tempos (5, 10 e 20 minutos). Ao conectar-se
+	     inicialmente, por exemplo, com 5 nós, depois de 40 minutos o download dos dumps dos arquivos da coleta será efetuado. Após esse download, o script get_samples.sh
+	     irá pedir pela reinicialização do servidor SopCast. Após reiniciar o servidor SopCast, basta apertar [ENTER] para que o script continue.
+
+(5) Gerar Resultados
+
+    Com os dumps no devido diretório (samples), basta gerar os resultados executando o seguinte script:
+
+    $ ./create_results.sh
+
+    ATENÇÃO: Esse script irá criar um diretório chamado "results" e dentro dele, haverá outros 6 diretórios. Cada um desses diretórios se refere ao número de nós no momento do
+	     streaming de vídeo: 5, 10, 15, 20, 25 e 50 nós simultaneamente. Essa mesma hierarquia é utilizada para a organização dos dumps da rede no momento do streaming. Em
+	     cada um desses diretórios, haverão 3 arquivos: 5min.stats, 10min.stats e 20min.stats (a mesma nomenclatura é utilizada para os dumps: 5min.pcap, 10min.pcap e 20min.pcap)
+
+

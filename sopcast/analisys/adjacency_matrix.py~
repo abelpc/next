@@ -1,0 +1,94 @@
+#!/usr/bin/python
+
+import sys
+import subprocess
+import copy
+
+IP_SCRIPT="../get_ip.sh"
+SEPARATOR="/"
+LIST_CMD = "ls"
+RESULTS_DIR = sys.argv[1]
+
+p = subprocess.Popen([LIST_CMD, RESULTS_DIR], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+dirs, err = p.communicate()
+nodes = dirs.splitlines()
+
+columns = {}
+rows = {}
+
+for node in nodes:
+	name = str(node.replace(".stats", ''))
+	columns[name] = 0
+	rows[name] = 0
+
+for node in nodes:
+	name = str(node.replace(".stats", ''))
+	columns[name] = copy.deepcopy(rows)
+
+
+for node in nodes:
+
+	arquivo = RESULTS_DIR + SEPARATOR + node
+	node_file = open(arquivo, 'r')
+	node_connections = node_file.read().splitlines()
+	node = node.replace(".stats", '')
+
+	for connection in node_connections:
+		if len(connection) > 0:
+			connection = str(connection)
+			#print "Columns_keys: \n %i\n\n" % len(columns.keys())
+			if not (columns.has_key(connection)):
+				rows[connection] = 0
+				columns[connection] = copy.deepcopy(rows)
+				#print "Nova coluna (%s): %s\n\n" % (connection, columns[connection])
+				#print "New_Columns_keys: %i \n" % len(columns.keys())
+
+				for all in columns.keys():
+
+					#print "Adding %s (%s)" % (all, node)
+
+					#if (all == node):
+					#	columns[node][connection] = 1
+					#else:
+						#temp3 = copy.deepcopy(columns[all])
+						#temp3[connection] = 0
+					columns[all][connection] = 0
+			#else:
+			if node != connection:
+				columns[node][connection] = 1
+#			print "=> %s" % columns[node][connection]
+
+		#print "%s\n" % node 
+		#print rows
+		#print columns[node]
+	node_file.close()
+
+
+
+first_row = " "
+#for x in columns.keys():
+for x in nodes:
+	x = str(x.replace(".stats", ''))
+	first_row = first_row + "%s " % x
+
+print first_row
+
+#for x in columns.keys():
+for x in nodes:
+	x = str(x.replace(".stats", ''))
+	coluna = x + "\t"
+	print x
+	#print "%s \n\n %s\n\n" % (x, columns[x])
+	#for y in columns[x].keys():
+	for y in nodes:
+		y = str(y.replace(".stats", ''))
+		#if (x == y):
+			#coluna[x][y] = 0
+			#coluna = coluna + str(columns[x][y]) + "(x) "
+			#print "%s == %s?" % (x, y)
+		#	coluna = coluna + "0(x) "
+		#else:
+		coluna = coluna + str(columns[x][y]) + " "
+	print coluna
+
+
