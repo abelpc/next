@@ -3,7 +3,7 @@ PlanetLab Analisys Tool
 === Introduction ===
 
 This is a tool that implements the architecture project proposed by Abel Souza in his final 
-thesis entitled ...
+thesis entitled "Uma Arquitetura para Experimentos em Larga Escala de Redes P2P"
 
 === REQUIREMENTS ===
 
@@ -44,7 +44,7 @@ at least one Nodes and/or one Monitors. Select as many as you can. Notice that w
 
 = Login =
 Username: abelpc_uff@yahoo.com.br
-Password: dkwpq753
+Password: pass
 
 = Interface =
 
