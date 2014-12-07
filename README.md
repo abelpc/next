@@ -45,12 +45,15 @@ at least one Nodes and/or one Monitors. Select as many as you can. Notice that w
 = Login =
 
 Username: PlanetLab_USER
+
 Password: PlanetLab_PASS
 
 = Interface =
 
 0) Double click on PANV and Execute it;
+
 1) Click on "PlanetLab" notetab;
+
 2) Click to select a private-key: select the file 'planetlab-key', under the sopcast folder;
 3) Click to select "Nodes'working directory": select 'sopcast' (this folder is inside the app's folder);
 3.1) Then, for Nodes select 'node.sh' and for Monitor select 'monitor.sh'
