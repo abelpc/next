@@ -1,4 +1,4 @@
-PlanetLab Analisys Tool
+Network eXperiment Tool (NeXT)
 
 === Introduction ===
 
