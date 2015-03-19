@@ -75,8 +75,6 @@ All results will be saved on the Results directory. Each file is named with the 
 
 == Options not working, yet ==
 
-- Add Node;
 - Delete Node;
-- Check Status;
 
 They will be working as soon as possible.
