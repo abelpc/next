@@ -1,6 +1,46 @@
+NOTICE: ALL THE COMMANDS HERE STATED WERE TESTES ON A MACHINE RUNNING THE UBUNTU OPERATING SYSTEM VERSION 14.04+
+WHICH ALREADY CONTAINS A PYTHON COMPILER 2.7+. IF YOUR SYSTEM DOES NOT CONTAIN IT, PLEASE VISIT www.python.org
+
+== Installing Paramiko ==
+
+Paramiko is the library which supports an SSH interface. So NeXT does need it in order to connect properly to all
+resources available on PlanetLab.
+
+As a SuperUser (root), execute the following command on a Terminal:
+
+apt-get install paramiko
+
+On Paramiko's Official Website, they recommend to install it using Pip (https://pip.pypa.io/en/latest/) by running
+as a normal user, the following command:
+
+pip install paramiko
+
+Either way you will install Paramiko so you will be able to properly execute the tool.
+
 == Quick HOW TO for creating an Experiment ==
 
-After installing NeXT, open the file 
+In order to create an experiment, you will need to code 2 scripts:
+
+i) Monitor Script
+
+This script will be executed on monitors you will select on your experiment. Pay attention that the same script is 
+executed on every configured monitor. It is usually programmed to call an external application to consume a content.
+(Like a P2P application, eg.: SopCast). It can be any executable file, like a Bash script with execution permissions
+(chmod +x script.sh).
+
+ii) A Node scripy
+
+This script will be executed on nodes you will select on your experiment. Pay attention that the same script is 
+executed on every configured node. The same description described above is applied here: it can be any executable file
+with execution permissions.
+
+Also, notice that a monitor cannot be a node. The tools assures that deselecting a host if you select it as a
+monitor (or as a node) for both roles.
+
+Save both files on any directory you want.
+
+After installing NeXT, double click the file PANV in order to open the tool. In order to properly use the tool, you
+will need a PlanetLab User
 
 = Login =
 
