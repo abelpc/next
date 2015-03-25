@@ -11,7 +11,7 @@ if [ ! -d $RESULTS_DIR ]; then
 }
 fi
 
-sudo chown rnp_OSN $RESULTS_DIR
+sudo chown $USER $RESULTS_DIR
 
 #pushd ~/sopcast
 
