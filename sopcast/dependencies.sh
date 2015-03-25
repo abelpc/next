@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HOME_DIR="/home/rnp_OSN"
+HOME_DIR="/home/$USER"
 SOP_DIR=$HOME_DIR/sopcast
 DEPENDENCIES=$SOP_DIR/dependencies
 TSHARK="/usr/sbin/tshark"
