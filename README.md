@@ -50,7 +50,7 @@ Password: PlanetLab_PASS
 
 = Interface =
 
-0) Double click on PANV and Execute it;
+0) Double click on NEXT and Execute it;
 
 1) Click on "PlanetLab" notetab;
 
