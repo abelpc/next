@@ -42,36 +42,7 @@ at least one Nodes and/or one Monitors. Select as many as you can. Notice that w
 
 == Quick Setup ==
 
-= Login =
-
-Username: PlanetLab_USER
-
-Password: PlanetLab_PASS
-
-= Interface =
-
-0) Double click on NEXT and Execute it;
-
-1) Click on "PlanetLab" notetab;
-
-2) Click to select a private-key: select the file 'planetlab-key', under the sopcast folder;
-
-3) Click to select "Nodes'working directory": select 'sopcast' (this folder is inside the app's folder);
-
-3.1) Then, for Nodes select 'node.sh' and for Monitor select 'monitor.sh'
-
-4) Click on "Refresh List" to retrieve nodes from your PlanetLab Slice;
-
-5) Come back to "Nodes" notetab and select some Nodes and Monitors;
-
-6) Click on "Send Directory to Nodes" to send (3) to all Nodes and Monitors;
-
-7) Open SopCast and under "MyServer" notetab, click on "Start"
-
-8) You can now start your experiment by clicking on the "Start" button (on our application);
-
-
-All results will be saved on the Results directory. Each file is named with the hosntmae from each node of your slice. 
+Refer to HOWTO file in order to execute an illustrative experiment.
 
 == Options not working, yet ==
 
