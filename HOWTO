@@ -48,9 +48,25 @@ Website and add the nodes of your preference. This will be possible through the 
 
 Step by Step process to emulate one Experiment:
 
-0.0) Download and Install SopCast on www.sopcast.com
+= SopCast =
 
-0.1) Find one *.RMVB/*.WMV video to stream on SopCast
+0.0) Download and Install the Windows version of SopCast from www.sopcast.com;
+     -> If you are on Linux, you can run the Win File with Wine (apt-get install wine);
+     -> Open it (create an user if you do not have one. This is also done at www.sopcast.com);
+
+0.1) Find one *.RMVB/*.WMV video to stream through SopCast and under "MyServer" notetab, select it to be streamed;
+
+0.2) Select 'broker.sopcast.com' as the Broker Manager;
+
+0.3) Also, select the port as '3912';
+
+0.4) You will need a Channel. Get one on www.sopcast.com and make it private;
+
+0.5) Once you create your channel, you will receive a Channel ID. In order to properly connect all nodes to this
+     Channel, you should edit one Variable on the file on the 'sopcast' directory called 'sampler.sh'. The variable
+     is called CHANNEL. Just edit the Number ID quoted there with the Channel ID you got when you create a Channel.
+    
+0.6) Click on "Start"
 
 = Login =
 
@@ -60,13 +76,13 @@ Password: PlanetLab_PASS
 
 = Interface =
 
-0) Double click on NEXT and Execute it;
+0.7) Double click on NEXT and Execute it;
 
 1) Click on "PlanetLab" notetab;
 
 2) Click to select a private-key: select the file 'planetlab-key', under the sopcast folder;
 
-3) Click to select "Nodes'working directory": select 'sopcast' (this folder is inside the app's folder);
+3) Click to select "Nodes'working directory": select 'sopcast' (this folder is inside the tool's folder);
 
 3.1) Then, for Nodes select 'node.sh' and for Monitor select 'monitor.sh'
 
@@ -76,8 +92,7 @@ Password: PlanetLab_PASS
 
 6) Click on "Send Directory to Nodes" to send (3) to all Nodes and Monitors;
 
-7) Open SopCast and under "MyServer" notetab, click on "Start"
+7) You can now start your experiment by clicking on the "Start" button (on our application);
 
-8) You can now start your experiment by clicking on the "Start" button (on our application);
-
-All results will be saved on the Results directory. Each file is named with the hosntmae from each node of your slice.
+All results will be saved on the Results directory. Each file is named with the hosntmae from each node of your 
+slice.
