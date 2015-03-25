@@ -75,6 +75,7 @@ All results will be saved on the Results directory. Each file is named with the 
 
 == Options not working, yet ==
 
+- Add Node;
 - Delete Node;
 
-They will be working as soon as possible.
+They will be working as soon as possible. Meanwhile, you can execute these actions on the PlanetLab Website.
