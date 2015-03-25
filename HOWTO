@@ -37,7 +37,10 @@ with execution permissions.
 Also, notice that a monitor cannot be a node. The tools assures that deselecting a host if you select it as a
 monitor (or as a node) for both roles.
 
-Save both files on any directory you want.
+Save both files on any directory you want. You can find, as an example, the base directory 'sopcast'. Notice the
+executable file called 'bridge.sh'. This file has to be in any base directory you select, because this is the
+script which bridges requests from Nodes and Monitors. Also, in order to help in the analisys, the directory
+'analisys'.
 
 After installing NeXT, double click the file PANV in order to open the tool. In order to properly use the tool, you
 will need a PlanetLab User
