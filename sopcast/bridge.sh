@@ -58,8 +58,8 @@ touch $RESULTS/$FILE_NAME
 sudo $TSHARK -q -i $INTERFACE -n -F libpcap -w $RESULTS/$FILE_NAME &
 
 $DIR/$CMD
-sudo chown -R rnp_OSN.slices $RESULTS 1>/dev/null 2>&1 
-chown -R rnp_OSN.slices $RESULTS
+sudo chown -R $USER.slices $RESULTS 1>/dev/null 2>&1 
+chown -R $USER.slices $RESULTS
 
 sudo killall -9 -q $TSHARK 1>/dev/null 2>&1
 
