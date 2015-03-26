@@ -1,4 +1,4 @@
-NOTICE: ALL THE COMMANDS HERE STATED WERE TESTES ON A MACHINE RUNNING THE UBUNTU OPERATING SYSTEM VERSION 14.04+
+NOTICE: ALL THE COMMANDS HERE STATED WERE TESTED ON A MACHINE RUNNING THE UBUNTU OPERATING SYSTEM VERSION 14.04+
 WHICH ALREADY CONTAINS A PYTHON COMPILER 2.7+. IF YOUR SYSTEM DOES NOT CONTAIN IT, PLEASE VISIT www.python.org
 
 == Installing Paramiko ==
@@ -42,9 +42,11 @@ the executable file called 'bridge.sh'. This file has to be in any base director
 script which bridges requests from Nodes and Monitors. Also, in order to help in the analisys, the directory
 'analisys' must be kept within the base directory (in this example, the base directory is 'sopcast').
 
-After installing NeXT, double click the file PANV in order to open the tool. In order to properly use the tool, you
+After installing NeXT, double click the file NEXT in order to open the tool. In order to properly use the tool, you
 will need a PlanetLab User and a Slice with noded added to it. In order to do so, you can access the PlanetLab
 Website and add the nodes of your preference. This will be possible through the application in the future.
+
+After adding all the nodes to your Slice, you will also need to run the file 'dependencies.sh' on every node.
 
 Step by Step process to emulate one Experiment:
 
