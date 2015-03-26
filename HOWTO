@@ -46,11 +46,19 @@ After installing NeXT, double click the file NEXT in order to open the tool. In 
 will need a PlanetLab User and a Slice with noded added to it. In order to do so, you can access the PlanetLab
 Website and add the nodes of your preference. This will be possible through the application in the future.
 
-After adding all the nodes to your Slice, you will also need to run the file 'dependencies.sh' on every node.
-
 Step by Step process to emulate one Experiment:
 
 = SopCast =
+
+0) After adding all the nodes to your Slice, you will also need to run the file 'dependencies.sh' on every node.
+   In order to do so, edit the file 'list_nodes.py' and change the following variables:
+   -> auth['Username'] = 'YOUR_USER_NAME@EMAIL.COM'
+   -> auth['AuthString'] = 'YOUR_PASSWORD'
+   
+   Save and close it. Now execute the file 'core.sh' file on a terminal:
+   -> sh core.sh
+   
+   Wait several minutes since it access every machine and installs the dependencies for this experiment.
 
 0.0) Download and Install the Windows version of SopCast from www.sopcast.com;
      -> If you are on Linux, you can run the Win File with Wine (apt-get install wine);
