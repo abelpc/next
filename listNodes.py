@@ -11,7 +11,7 @@ class listNodes:
 	#user = 'abelpc_uff@yahoo.com.br'
 	#password = 'dkwpq753'
 	auth = {}
-	private_key = '/home/zekrioca/sopcast/planetlab-key'
+	private_key = 'sopcast/planetlab-key'
 
 	return_fields = ['slice_id', 'node_ids']
 
