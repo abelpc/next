@@ -2,8 +2,11 @@ Network eXperiment Tool (NeXT)
 
 === Introduction ===
 
-This is a tool that implements the architecture project proposed by Abel Souza in his final 
-thesis entitled "Uma Arquitetura para Experimentos em Larga Escala de Redes P2P"
+This is a tool that implements an architecture proposed by Abel Souza in his final thesis entitled "Uma Arquitetura para Experimentos em Larga Escala de Redes P2P" and published on the 33rd Brazilian Symposium on Computer Networks and Distributed Systems.
+
+Download the paper clicking on the following URL:
+
+http://sbrc2015.ufes.br/wp-content/uploads/b-140485_1.pdf
 
 === REQUIREMENTS ===
 
