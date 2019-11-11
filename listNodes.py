@@ -8,8 +8,6 @@ class listNodes:
 	api_server = xmlrpclib.ServerProxy('https://www.planet-lab.org/PLCAPI/', allow_none=True)
 	slice_name = None
 	
-	#user = 'abelpc_uff@yahoo.com.br'
-	#password = 'dkwpq753'
 	auth = {}
 	private_key = 'sopcast/planetlab-key'
 
