@@ -57,9 +57,6 @@ class Handler:
 		dialog = Dialog(self.builder, None)
 		user = self.builder.get_object("username").get_text()
 		password = self.builder.get_object("password").get_text()
-		#user = "abelpc_uff@yahoo.com.br"
-		#password = "dkwpq753"
-		#print "User: %s\nPassword: %s" % (user, password)
 		
 		if (not user or not password):
 			dialog.show_message_dlg("Please, provide BOTH Username and Password.", Gtk.MessageType.INFO)
