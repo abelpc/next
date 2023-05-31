@@ -50,8 +50,8 @@ executar essa ação, basta executar o script 'ping.py'
 
 Alternativamente, você poderá remover nós diretamente do site do PlanetLab, utilizando os seguintes dados para logar-se em www.planet-lab.org:
 
-Username: abelpc_uff@yahoo.com.br
-Senha: dkwpq753
+Username: username@provider.com
+Senha: <PASS>
 
 Enviando arquivos básicos de funcionamento
 
@@ -67,7 +67,7 @@ Channel Name: UFF
 Channel ID: 173804
 Endereço: sop://broker.sopcast.com:3912
 Nome da conta: uff_sopcast@hotmail.com
-Senha: dkwpq753
+Senha: <PASS>
 Porta: 3902
 
 -> Um arquivo WMV ou RMVB deve ser configurado no momento da inicialização do servidor.
