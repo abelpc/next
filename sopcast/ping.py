@@ -6,8 +6,8 @@ api_server = xmlrpclib.ServerProxy('https://www.planet-lab.org/PLCAPI/', allow_n
 
 auth = {}
 auth['AuthMethod'] = 'password'
-auth['Username'] = 'abelpc_uff@yahoo.com.br'
-auth['AuthString'] = 'dkwpq753'
+auth['Username'] = 'username@provider.com.br'
+auth['AuthString'] = 'pass'
 
 #return_fields = ['node_ids']
 return_fields = ['slice_id', 'node_ids']
